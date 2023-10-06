@@ -6,9 +6,9 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum Perfil {
-    MEDICO(1, "Médico"),
-    PACIENTE(2, "Paciente"),
-    ADM(3, "Adm");
+    MEDICO(0, "Médico"),
+    PACIENTE(1, "Paciente"),
+    ADM(2, "Adm");
 
     private final int valor;
     private final String descricao;

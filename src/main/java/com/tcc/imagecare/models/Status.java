@@ -8,9 +8,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Getter
 public enum Status {
-    AGENDADO(1, "Agendado"),
-    CONCLUIDO(2, "Concluído"),
-    CANCELADO(3, "Cancelado");
+    AGENDADO(0, "Agendado"),
+    CONCLUIDO(1, "Concluído"),
+    CANCELADO(2, "Cancelado");
 
     private final int valor;
     private final String descricao;
