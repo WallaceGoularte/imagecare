@@ -1,4 +1,4 @@
-package com.tcc.imagecare.config;
+package com.tcc.imagecare.controllers.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
