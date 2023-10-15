@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,8 +22,9 @@ public class AgendamentoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Agendamento>> listarAgendamentos() {
-        List<Agendamento> agendamentos = agendamentoService.listarTodosAgendamentosAtivos();
+    public ResponseEntity<List<Agendamento>> listarAgendamentos(
+                                                 @RequestParam(name = "filtro", required = false, defaultValue = "today") String filtro) {
+        List<Agendamento> agendamentos = agendamentoService.buscarAgendamentosPorData(filtro);
         return ResponseEntity.ok(agendamentos);
     }
 

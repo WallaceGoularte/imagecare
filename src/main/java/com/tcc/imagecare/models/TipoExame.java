@@ -10,7 +10,7 @@ public enum TipoExame {
     MAMOGRAFIA(0, "Mamografia"),
     ULTRASSOM(1, "Ultrassom"),
     TOMOGRAFIA(2, "Tomografia"),
-    RESSONANCIA(3, "Ressonância");
+    RESSONANCIA(3, "Ressonancia");
 
     private final int valor;
     private final String descricao;
