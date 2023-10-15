@@ -1,5 +1,6 @@
 package com.tcc.imagecare.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,7 +16,9 @@ public class Agendamento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+
     @Column(name = "data")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "America/Sao_Paulo")
     private LocalDateTime data;
 
     @Column(name = "status")
@@ -23,7 +26,7 @@ public class Agendamento implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "paciente_id")
-    private Paciente paciente;
+    private Paciente pacienteId;
 
     @OneToOne
     @JoinColumn(name = "exame_id")

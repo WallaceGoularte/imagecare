@@ -16,7 +16,7 @@ public class Exame implements Serializable {
     private Integer id;
 
     @Column(name = "nome")
-    private String nome;
+    private TipoExame nome;
 
     @Column(name = "data")
     private LocalDateTime data;

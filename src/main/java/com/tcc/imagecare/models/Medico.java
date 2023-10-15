@@ -5,9 +5,9 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "funcionario")
+@Table(name = "medico")
 @Data
-public class Funcionario {
+public class Medico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,12 +16,7 @@ public class Funcionario {
     @Column(name = "nome")
     private String nome;
 
-    @OneToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuarioId;
-
-    @OneToOne
-    @JoinColumn(name = "medico_id")
-    private Medico medicoId;
+    @Column(name = "crm")
+    private String crm;
 
 }

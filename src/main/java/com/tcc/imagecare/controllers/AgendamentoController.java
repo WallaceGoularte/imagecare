@@ -1,6 +1,7 @@
 package com.tcc.imagecare.controllers;
 
 import com.tcc.imagecare.models.Agendamento;
+import com.tcc.imagecare.models.dto.AgendamentoDTO;
 import com.tcc.imagecare.services.AgendamentoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ public class AgendamentoController {
 
     @GetMapping
     public ResponseEntity<List<Agendamento>> listarAgendamentos() {
-        List<Agendamento> agendamentos = agendamentoService.listarTodosAgendamentos();
+        List<Agendamento> agendamentos = agendamentoService.listarTodosAgendamentosAtivos();
         return ResponseEntity.ok(agendamentos);
     }
 
@@ -32,9 +33,9 @@ public class AgendamentoController {
     }
 
     @PostMapping
-    public ResponseEntity<Agendamento> criarAgendamento(@RequestBody Agendamento agendamento) {
-        Agendamento novoAgendamento = agendamentoService.criarAgendamento(agendamento);
-        return ResponseEntity.status(HttpStatus.CREATED).body(novoAgendamento);
+    public ResponseEntity<Void> criarAgendamento(@RequestBody AgendamentoDTO agendamento) throws Exception {
+        agendamentoService.criarAgendamento(agendamento);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping("/{id}")
